@@ -3,6 +3,8 @@ YARP (Yet Another Request-Promise)
 
 [![NPM](https://nodei.co/npm/yarp.png)](https://nodei.co/npm/yarp/)
 
+[![Build Status](https://travis-ci.org/dialexa/yarp.svg)](https://travis-ci.org/dialexa/yarp)
+
 There is a glut of promise-based wrappers around the awesome `request` module (https://github.com/request/request).
 
 This is yet another one.
