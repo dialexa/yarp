@@ -18,9 +18,10 @@ var internals = {
 module.exports = function(_options) {
   return new Promise(function(resolve, reject) {
     request(_options, function(err, resp, data) {
+      delete _options.auth;
       if (err) {
         err.message += ' while attempting ' + JSON.stringify(_options);
-        reject(err);
+        reject(new Error(err));
       } else if (resp.statusCode > 399) {
         var msg = null;
 
