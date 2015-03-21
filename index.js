@@ -1,5 +1,5 @@
-var request = require('request'),
-    Q = require('q');
+var request = require('request');
+var Promise = require('bluebird');
 
 var internals = {
   convertJSONSafe: function(s){
@@ -16,7 +16,7 @@ var internals = {
 };
 
 module.exports = function(_options) {
-  return new Q.Promise(function(resolve, reject) {
+  return new Promise(function(resolve, reject) {
     request(_options, function(err, resp, data) {
       if (err) {
         err.message += ' while attempting ' + JSON.stringify(_options);
