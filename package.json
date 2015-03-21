@@ -10,7 +10,7 @@
   "author": "Powell Kinney <pkinney@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "q": "^1.1.2",
+    "bluebird": "^2.9.14",
     "request": "^2.49.0"
   },
   "devDependencies": {
