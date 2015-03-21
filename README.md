@@ -1,8 +1,7 @@
 YARP (Yet Another Request-Promise)
 ==================================
 
-[![NPM](https://nodei.co/npm/yarp.png)](https://nodei.co/npm/yarp/)
-
+[![npm version](https://badge.fury.io/js/yarp.svg)](http://badge.fury.io/js/yarp)
 [![Build Status](https://travis-ci.org/dialexa/yarp.svg)](https://travis-ci.org/dialexa/yarp)
 
 There is a glut of promise-based wrappers around the awesome `request` module (https://github.com/request/request).
