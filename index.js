@@ -25,7 +25,8 @@ module.exports = function(_options, resolveAll) {
       } else if (resolveAll) {
         resolve({
           statusCode: resp.statusCode,
-          data: internals.convertJSONSafe(data)
+          data: internals.convertJSONSafe(data),
+          body: resp.body
         });
       } else if (resp.statusCode > 399) {
         var msg = null;

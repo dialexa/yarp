@@ -41,6 +41,7 @@ yarp({
 }, true).then(function(resp){     // resolves for any status code
   console.log(resp.statusCode);   // status code from the response
   console.log(resp.data)          // response from the servdr, parsed if valid JSON
+  console.log(resp.body)          // raw response
 }).catch(function(err){
   console.log(err)                // rejects with internal client error
 }).done();

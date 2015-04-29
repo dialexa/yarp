@@ -180,6 +180,7 @@ describe('Yarp', function(){
         expect(resp).to.have.property('statusCode', 200);
         expect(resp).to.have.property('data');
         expect(resp.data).to.deep.equal({foo: 'bar'});
+        expect(resp.body).to.deep.equal('{"foo":"bar"}');
         get.done();
       });
     });
@@ -200,6 +201,22 @@ describe('Yarp', function(){
       });
     });
 
+    it('should include the raw body', function(){
+      var get = nock('http://example.com').get('/api/test').reply(200, '{"foo": "bar"}', {
+       'Content-Type': 'text'
+     });
+
+      return yarp({
+        method: 'get',
+        url: 'http://example.com/api/test'
+      }, true).then(function(resp){
+        expect(resp).to.have.property('statusCode', 200);
+        expect(resp).to.have.property('data');
+        expect(resp.body).to.deep.equal('{"foo": "bar"}');
+        get.done();
+      });
+    });
+
     it('should resolve with a String if the response is not JSON', function(){
       var get = nock('http://example.com').get('/api/test').reply(200, 'This is not json', {
        'Content-Type': 'text'
@@ -212,6 +229,7 @@ describe('Yarp', function(){
         expect(resp).to.have.property('statusCode', 200);
         expect(resp).to.have.property('data');
         expect(resp.data).to.deep.equal('This is not json');
+        expect(resp.body).to.deep.equal('This is not json');
         get.done();
       });
     });

@@ -1,6 +1,6 @@
 {
   "name": "yarp",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Yet Another Request-Promise - Overly-simple, Q-based promise wrapper around the amazing request module",
   "main": "index.js",
   "scripts": {
