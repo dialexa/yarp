@@ -24,8 +24,24 @@ yarp({
     console.log(err.message);     // if the server gave a message as part of its response
     console.log(err.data);        // the data received from the server (if present)
     console.log(err.request);     // the original request options
-  } else {                        // internal client error
-    console.log(err)
+  } else {
+    console.log(err)              // internal client error
   }
+}).done();
+```
+
+As of 0.4.0, you can now pass `true` as a second parameter to have all responses treated as resolution:
+
+```javascript
+var yarp = require('yarp');
+
+yarp({
+  method: 'GET',
+  url: 'http://jsonplaceholder.typicode.com/users',
+}, true).then(function(resp){     // resolves for any status code
+  console.log(resp.statusCode);   // status code from the response
+  console.log(resp.data)          // response from the servdr, parsed if valid JSON
+}).catch(function(err){
+  console.log(err)                // rejects with internal client error
 }).done();
 ```

@@ -15,13 +15,18 @@ var internals = {
   }
 };
 
-module.exports = function(_options) {
+module.exports = function(_options, resolveAll) {
   return new Promise(function(resolve, reject) {
     request(_options, function(err, resp, data) {
       delete _options.auth;
       if (err) {
         err.message += ' while attempting ' + JSON.stringify(_options);
         reject(new Error(err));
+      } else if (resolveAll) {
+        resolve({
+          statusCode: resp.statusCode,
+          data: internals.convertJSONSafe(data)
+        });
       } else if (resp.statusCode > 399) {
         var msg = null;
 
