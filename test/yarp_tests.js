@@ -180,7 +180,7 @@ describe('Yarp', function(){
         expect(resp).to.have.property('statusCode', 200);
         expect(resp).to.have.property('data');
         expect(resp.data).to.deep.equal({foo: 'bar'});
-        expect(resp.body).to.deep.equal('{"foo":"bar"}');
+        expect(resp.body).to.equal('{"foo":"bar"}');
         get.done();
       });
     });
