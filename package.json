@@ -1,6 +1,6 @@
 {
   "name": "yarp",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "Yet Another Request-Promise - Overly-simple, Q-based promise wrapper around the amazing request module",
   "main": "index.js",
   "scripts": {
@@ -10,16 +10,16 @@
   "author": "Powell Kinney <pkinney@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "bluebird": "^2.9.14",
+    "bluebird": "^2.9.30",
     "lodash": "^3.10.0",
-    "request": "^2.55.0"
+    "request": "^2.58.0"
   },
   "devDependencies": {
-    "chai": "^1.10.0",
-    "chai-as-promised": "^4.1.1",
-    "istanbul": "^0.3.2",
-    "mocha": "^2.0.1",
-    "nock": "^0.51.0"
+    "chai": "^3.0.0",
+    "chai-as-promised": "^5.1.0",
+    "istanbul": "^0.3.17",
+    "mocha": "^2.2.5",
+    "nock": "^2.6.0"
   },
   "directories": {
     "test": "test"
