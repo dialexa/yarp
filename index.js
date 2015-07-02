@@ -1,5 +1,6 @@
 var request = require('request');
 var Promise = require('bluebird');
+var _ = require('lodash');
 
 var internals = {
   convertJSONSafe: function(s){
@@ -18,9 +19,8 @@ var internals = {
 module.exports = function(_options, resolveAll) {
   return new Promise(function(resolve, reject) {
     request(_options, function(err, resp, data) {
-      delete _options.auth;
       if (err) {
-        err.message += ' while attempting ' + JSON.stringify(_options);
+        err.message += ' while attempting ' + JSON.stringify(_.omit(_options, 'auth'));
         reject(new Error(err));
       } else if (resolveAll) {
         resolve({
@@ -38,7 +38,7 @@ module.exports = function(_options, resolveAll) {
           msg = data.message || data;
         }
 
-        var rej = new Error('"'+JSON.stringify(msg)+'" while attempting ' + JSON.stringify(_options));
+        var rej = new Error('"'+JSON.stringify(msg)+'" while attempting ' + JSON.stringify(_.omit(_options, 'auth')));
         rej.statusCode = resp.statusCode;
         rej.data = data;
         rej.request = _options;
