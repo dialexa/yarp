@@ -20,7 +20,11 @@ module.exports = function(_options, resolveAll) {
   return new Promise(function(resolve, reject) {
     request(_options, function(err, resp, data) {
       if (err) {
-        err.message += ' while attempting ' + JSON.stringify(_.omit(_options, 'auth'));
+        if(typeof _options === 'string') {
+          err.message += ' while attempting ' + _options;
+        } else {
+          err.message += ' while attempting ' + JSON.stringify(_.omit(_options, 'auth'));
+        }
         reject(new Error(err));
       } else if (resolveAll) {
         resolve({
