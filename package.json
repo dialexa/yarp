@@ -1,7 +1,7 @@
 {
   "name": "yarp",
   "version": "0.4.5",
-  "description": "Yet Another Request-Promise - Overly-simple, Q-based promise wrapper around the amazing request module",
+  "description": "Yet Another Request-Promise - Overly-simple promise wrapper around the amazing request module",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
