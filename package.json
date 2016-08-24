@@ -1,6 +1,6 @@
 {
   "name": "yarp",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "description": "Yet Another Request-Promise - Overly-simple promise wrapper around the amazing request module",
   "main": "index.js",
   "scripts": {
@@ -17,9 +17,9 @@
   "devDependencies": {
     "chai": "^3.0.0",
     "chai-as-promised": "^5.1.0",
-    "istanbul": "^0.3.17",
-    "mocha": "^2.2.5",
-    "nock": "^2.6.0"
+    "istanbul": "^0.4.5",
+    "mocha": "^3.0.2",
+    "nock": "^8.0.0"
   },
   "directories": {
     "test": "test"
